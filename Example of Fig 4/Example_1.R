@@ -26,7 +26,7 @@ MAE |>
   EMP_save_var('meta_data') |>
   EMP_coldata_extract(coldata_to_assay = patient_diet,action = 'add') |>
   EMP_save_var('diet_data') |>
-  EMP_cluster_analysis(h = 0.5) |>
+  EMP_cluster_analysis(h = 0.5) |> 
   EMP_filter(cluster == 24) |>
   EMP_filter(!is.na(Metabolic_syndrome)) |>
   EMP_filter(Antibiotics == 'n' & Colitis == 'n') |>
@@ -44,14 +44,14 @@ MAE |>
                        .factor_unwanted = 'Districts',
                        .factor_of_interest = 'Metabolic_syndrome') |>  ### Remove regional batch effect
   EMP_filter(feature_condition = !str_detect_multi(feature,'unclassified')) |>
-  EMP_decostand(method = 'relative') |>
-  EMP_alpha_analysis() |>
+  EMP_decostand(method = 'relative') |>  
+  EMP_alpha_analysis() |> 
   EMP_boxplot(estimate_group = 'Metabolic_syndrome',
               select_metrics = c('shannon','simpson')) |>
   EMP_dimension_analysis(method = 'pca',scale = 'hellinger') |>
   EMP_scatterplot(show = 'p12html') |>
   EMP_identify_assay(method = 'default') |>
-  EMP_diff_analysis(method = 'wilcox.test') |>
+  EMP_diff_analysis(method = 'wilcox.test') |> 
   EMP_filter(feature_condition = fdr < 0.05) |>  ### Filter the marker
   EMP_save_var('microbiome_data') |> ### Save the data into environment
   EMP_collapse(method = 'mean',collapse_by = 'col') |>  ### Collapse the data by group
@@ -61,7 +61,7 @@ MAE |>
   EMP_cor_analysis() |>
   EMP_sankey_plot() |>
   EMP_network_analysis(method = 'pcor',
-                       threshold = 'fdr') |>
+                       threshold = 'fdr') |>  
   EMP_network_plot(show = 'node') |>
   EMP_network_plot(show = 'net',
                    shape = 'diamond', vsize = 4,

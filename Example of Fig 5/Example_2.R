@@ -16,7 +16,7 @@ Bowel |>
   EMP_decostand(method = 'relative') |>
   EMP_collapse(estimate_group = 'Genus',
                collapse_by = 'row') |>
-  EMP_alpha_analysis() |>
+  EMP_alpha_analysis() |> 
   EMP_boxplot(estimate_group = 'Study.Group',
               ref.group = 'Control') |>
   EMP_dimension_analysis(method = 'pcoa',
@@ -25,7 +25,7 @@ Bowel |>
                   force_adonis = TRUE,
                   ref.group = 'Control') |> ### The Adonis analysis cost much time
   EMP_identify_assay(method = 'default') |>  ### Filter the noise taxa
-  EMP_marker_analysis(method = 'boruta') |>
+  EMP_marker_analysis(method = 'boruta') |> 
   EMP_filter(feature_condition = Boruta_decision!='Rejected') |>
   EMP_save_var('all_tax') |>
   EMP_collapse(estimate_group = 'Study.Group',
@@ -55,7 +55,7 @@ Bowel |>
   EMP_volcanol_plot(dot_size = 4) |>
   EMP_dimension_analysis(method = 'opls') |> ### OPLS model
   EMP_scatterplot(show = 'p12html',
-                  force_adonis = TRUE) |>
+                  force_adonis = TRUE) |>  
   EMP_filter(feature_condition = VIP >1) |>  ### Select the marker metabolite
   EMP_enrich_analysis(keyType = 'cpd',pvalueCutoff = 0.05,
                       KEGG_Type = 'KEGG') |> ### KEGG enrichment
