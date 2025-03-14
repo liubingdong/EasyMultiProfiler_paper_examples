@@ -5,5 +5,3 @@ The code repository is avaviable at [EasyMultiProfiler](https://github.com/liubi
 
 Detaled tutorial is avaviable at [online tutorial](http://easymultiprofiler.xielab.net/)
 
-
-## The first example 
