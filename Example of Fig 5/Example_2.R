@@ -17,7 +17,7 @@ Bowel |>
   EMP_collapse(estimate_group = 'Genus',
                collapse_by = 'row') |>
   EMP_alpha_analysis() |> 
-  EMP_boxplot(estimate_group = 'Study.Group',
+  EMP_boxplot(estimate_group = 'Study.Group',plot='violin',
               ref.group = 'Control') |>
   EMP_dimension_analysis(method = 'pcoa',
                          distance = 'bray') |>
