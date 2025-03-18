@@ -62,9 +62,13 @@ MAE |>
   EMP_sankey_plot() |>
   EMP_network_analysis(method = 'pcor',
                        threshold = 'fdr') |>  
-  EMP_network_plot(show = 'node') |>
   EMP_network_plot(show = 'net',
                    shape = 'diamond', vsize = 4,
                    edge.labels = TRUE,edge.label.cex = 0.6,
                    esize = 1.5,fade = F,edge.width = 3,
-                   edge.label.bg = FALSE,label.cex = 1,threshold = 0.1) 
+                   edge.label.bg = FALSE,label.cex = 1,threshold = 0.1) |>
+  EMP_network_plot(show = 'node') 
+
+
+
+
