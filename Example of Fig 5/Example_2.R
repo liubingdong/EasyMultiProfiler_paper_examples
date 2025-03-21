@@ -17,7 +17,7 @@ Bowel |>
   EMP_collapse(estimate_group = 'Genus',
                collapse_by = 'row') |>
   EMP_alpha_analysis() |> 
-  EMP_boxplot(estimate_group = 'Study.Group',plot='violin',
+  EMP_boxplot(estimate_group = 'Study.Group',
               ref.group = 'Control') |>
   EMP_dimension_analysis(method = 'pcoa',
                          distance = 'bray') |>
@@ -61,8 +61,7 @@ Bowel |>
                       KEGG_Type = 'KEGG') |> ### KEGG enrichment
   EMP_enrich_dotplot(show = 10) 
 
-(CRC_metabolite + all_tax |> ### Combime microbiome and metabolite data
-    EMP_filter(Study.Group %in% c('Control','CRC')) ) |>
+(CRC_metabolite + all_tax) |> ### Combime microbiome and metabolite data
   EMP_WGCNA_cor_analysis() |> ### WGCNA cor analysis
   EMP_heatmap_plot(label_size = 2) |>
   EMP_assay_extract('metabolite') |>
